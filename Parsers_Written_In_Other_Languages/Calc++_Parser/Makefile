@@ -5,8 +5,8 @@ parser:$(OBJECTS)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) -o parser
 parser.hh parser.cc:parser.yy
 	bison -d parser.yy
-scanner.hh scanner.cc:scanner.l
-	flex scanner.l
+scanner.hh scanner.cc:scanner.ll
+	flex scanner.ll
 .cc.o:
 	$(CXX) $(CXXFLAGS) -c $<
 clean:
